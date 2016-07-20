@@ -4,8 +4,6 @@
 // to produce the string "World!"
 // By Ingemar Ragnemalm 2010
 
-// nvcc hello-world.cu -L /usr/local/cuda/lib -lcudart -o hello-world
-
 #include <stdio.h>
 
 const int N = 16; 
