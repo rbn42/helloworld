@@ -1,0 +1,3 @@
+[submodule "bobscheme"]
+	path = bobscheme
+	url = https://github.com/eliben/bobscheme.git
