@@ -1,0 +1,27 @@
+Emacs Lisp: Read File Content as String or List of Lines
+By Xah Lee. Date: 2008-12-05. Last updated: 2014-09-30.
+Read File Content into a String
+
+(defun get-string-from-file (filePath)
+  "Return filePath's file content."
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (buffer-string)))
+;; thanks to “Pascal J Bourguignon” and “TheFlyingDutchman 〔zzbba…@aol.com〕”. 2010-09-02
+
+Read File Content as List of Lines
+
+(defun read-lines (filePath)
+  "Return a list of lines of a file at filePath."
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (split-string (buffer-string) "\n" t)))
+
+Once you have a list, you can use mapcar to process each element in the list. If you don't need the resulting list, use mapc.
+
+Note: in elisp, it's more efficient to process text in a buffer than doing complicated string manipulation with string data type. But, if your lines are all short and you don't need to know the text that comes before or after current line, then, list of lines can be easier to work with.
+
+    Emacs Lisp: Functions to Process Lines
+    Emacs Lisp: Process File line-by-line
+    Emacs Lisp Idioms for Text Processing in Batch Style
+
