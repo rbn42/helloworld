@@ -34,3 +34,7 @@
 (p (get-string-from-file "./file"))
 (p (read-lines "./file"))
 (p (read-lines "./file_cal"))
+(princ mode-line-modified)
+(princ mode-line-end-spaces)
+(setq a '(%1* %1+))
+(princ a)
