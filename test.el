@@ -38,3 +38,4 @@
 (princ mode-line-end-spaces)
 (setq a '(%1* %1+))
 (princ a)
+(princ (getenv "TERM"))
