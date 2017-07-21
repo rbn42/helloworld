@@ -1,9 +1,2 @@
 #!/bin/bash
-rm ./build 
-mkdir ./build
-cd ./build
-cmake  ..
-cp ../Makefile ./
-cp ../HelloX.c ./
-make
-
+cc -o xcr $(pkg-config --cflags --libs cairo xcb xcb-icccm) xcr.c -lcairo -lxcb -lxcb-icccm
